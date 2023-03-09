@@ -1,0 +1,41 @@
+
+// STRUCT TEMPLATE
+
+// type Template struct {} adalah sebuah kumpulan definisi variabel atau property atau fungsi yg nantinya dibungkus sebagai template data baru dengan nama tertentu, singkatnya type Template struct{} akan membuat sebuah sekumpulan definisi variabel atau fungsi ataupun property yg nantinya akan dibungkus menjadi tipe data baru
+
+// type Template struct {
+// templates *template.Template
+// }
+// penjelasan :
+// templates => nama variabel yg akan menampung Data *template dan menampung method Template
+// *template => berupa semua data dari template || karna ada tanda bintang atau *
+// .Template => berupa method template
+
+// type Template struct {
+// templates *template.Template
+// }
+// code diatas berguna untuk tempat untuk merender html, lebih tepatnya untuk menciptakan dari si html || jadi si golang akan dibantu oleh ketiga kode diatas agar dapat merender si html
+// template diatas akan menambahkan sebuah package "text/template" kedalam import
+
+// func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Context)error{
+// return t.templates.ExecuteTemplate(w, name, data)
+// }
+// func => keyword function
+// t => variabel yg akan menampung struct Template
+// *Template => nama dari type structnya yg berisikan variabel templates *template.Template
+// Render => nama functionnya
+// w => variabel yg akan menampung io.Write yg akan berguna untuk merender html
+// Write => jika ingin meng write sesuatu maka kita harus membutuhkan sebuah responden, tugas write untuk mengirim html
+// io.Writer => package dari golang, io singkatan dari input output sedangkan Writer untuk merender dari htmlnya
+// name => nama variabel yg menampung method string
+// string =>
+// data => nama variabel yg akan menampung interface
+// interface => ini adalah antar mukanya, variabel data akan diisi dengan antar mukanya yaitu interface
+// c => nama variabel untuk menampung echo.Context
+// error => untuk menampung data ketika blok code terdapat error
+// t.templates.ExecuteTemplate :
+// t adalah variabel yg menampung struct Template,
+// Template yg ada didalam variabel t membutuhkan sebuah response untuk dieksekusi melalui ExecuteTemplate
+// .templates adalah method template yg akan membuat dasar template yg dasar nya akan mengambil dari sebuah html dan nantinya akan dirender oleh ExecuteTemplate,
+// ExecuteTemplate untuk mengeksekusi dan merender html.
+// variabel w didalam ExecuteTemplate yg menampung io.Writer nantinya yg akan dirender
